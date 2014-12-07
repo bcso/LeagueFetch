@@ -1,28 +1,23 @@
 from urllib2 import Request, urlopen
 import json
+from LeagueAPI import *
 
-url = 'https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/ddomokunn,theflyingrock?api_key=a87458ef-570a-4509-98d8-f7f0c30b183b'
+def main():
+	summonerName = raw_input('\n Input your summoner name: ')
 
-req = Request(url)
-response = urlopen(req)
-result = response.read()
+	if type(summonerName) != type('s'):
+		summonerName = str(summonerName)
 
-summonerName = raw_input('\n Input your summoner name: ')
+	myLeagueObject = LeagueObject()
 
-if type(summonerName) != type('s'):
-	summonerName = str(summonerName)
+	summonerDict = 	myLeagueObject.callSummonerDict(summonerName)
 
-d = json.loads(result)
-summName = d[summonerName]['name']
-summId = d[summonerName]['id']
+	matchDict = myLeagueObject.callMatchDict(
+		summonerDict[summonerName]['id'])
 
-print json.dumps(d, sort_keys=True, indent=4, separators=(',', ': '))
-
-url2 = 'https://na.api.pvp.net/api/lol/na/v2.2/matchhistory/' + str(summId) + '?api_key=a87458ef-570a-4509-98d8-f7f0c30b183b'
-req = Request(url2)
-response = urlopen(req)
-result = response.read()
-d = json.loads(result)
-print json.dumps(d.values(), sort_keys=True, indent=4, separators=(',', ': '))
+	myLeagueObject.prettyPrintJson(summonerDict)
 
 
+
+
+main()
