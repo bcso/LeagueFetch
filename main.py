@@ -17,7 +17,6 @@ def main():
 
 	myLeagueObject.prettyPrintJson(summonerDict)
 
-
-
+	myLeagueObject.scrapeNames(100)
 
 main()
