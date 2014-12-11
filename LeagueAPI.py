@@ -5,7 +5,7 @@ import time
 class LeagueObject:
 	def __init__(self):
 		self.key = "a87458ef-570a-4509-98d8-f7f0c30b183b"
-
+		
 	def callMatchDict(self, summId):
 		url = 'https://na.api.pvp.net/api/lol/na/v2.2/matchhistory/' + str(summId) + '?api_key=' + self.key
 		result = urlopen(Request(url)).read()
@@ -19,17 +19,17 @@ class LeagueObject:
 		return summonerDict
 
 	def prettyPrintJson(self, inputJson):
-		print json.dumps(inputJson.values(), sort_keys=True, indent=4, separators=(',', ': '))
+		print json.dumps(inputJson, sort_keys=True, indent=4, separators=(',', ': '))
 
 	def scrapeNames(self, numberOfNames):
 		currID = 24918846
-
-		for x in range(0,numberOfNames):
+		count = 0;
+		while (count < numberOfNames): #Loop over for unique names
 			url = 'https://na.api.pvp.net/api/lol/na/v1.4/summoner/' + str(currID) + '?api_key=' + self.key
 			nameListObj = json.loads(urlopen(Request(url)).read())
 			currName = nameListObj[str(currID)]["name"]
-			
-			print currName
+			if currName[:2] != 'IS':
+				print currName
+				count = count +1
 			currID = currID + 1
 			time.sleep(1)
-			

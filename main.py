@@ -3,20 +3,30 @@ import json
 from LeagueAPI import *
 
 def main():
-	summonerName = raw_input('\n Input your summoner name: ')
-
-	if type(summonerName) != type('s'):
-		summonerName = str(summonerName)
-
+	choice = 0;
 	myLeagueObject = LeagueObject()
 
-	summonerDict = 	myLeagueObject.callSummonerDict(summonerName)
+	while choice != 3:
+		print "1. Find your match history"
+		print "2. Scrape some names"
+		print "3. Quit"
+		choice = int(raw_input("Choice: "))
 
-	matchDict = myLeagueObject.callMatchDict(
-		summonerDict[summonerName]['id'])
+		if choice == 1:
+			summonerName = raw_input('\n Input your summoner name: ')
+			if type(summonerName) != type('s'):
+				summonerName = str(summonerName)
+			summonerDict = 	myLeagueObject.callSummonerDict(summonerName)
 
-	myLeagueObject.prettyPrintJson(summonerDict)
+			matchDict = myLeagueObject.callMatchDict(
+				summonerDict[summonerName]['id'])
 
-	myLeagueObject.scrapeNames(100)
+			for match in matchDict["matches"]:
+				print "Match ID: " + str(match["matchId"]) + " Duration: " + str(match["matchDuration"])
+			# myLeagueObject.prettyPrintJson(matchDict["matches"][0])
+
+		elif choice == 2:
+			numNames = int(raw_input('\n Number of names: '))
+			myLeagueObject.scrapeNames(numNames)
 
 main()
