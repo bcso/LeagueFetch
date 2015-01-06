@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>LeagueFetch by bcso</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/bcso/LeagueFetch">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>LeagueFetch</h1>
+            <h2></h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/bcso/LeagueFetch/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/bcso/LeagueFetch/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h3>
+<a id="welcome-to-league-fetch" class="anchor" href="#welcome-to-league-fetch" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to League Fetch.</h3>
+
+<p>This is a novel python script leveraging the League of Legends API, testing out what is possible with it. Users may choose between one of two options - first is to retrieve histories for their past 10 games and associated Match History ID, second is to scrape summoner in-game-names. Match History ID can be easily used to query match history details by concatinating it in the request URL.</p>
+
+<pre><code>$ cd your_repo_root/repo_name
+$ python main.py
+</code></pre>
+
+<h3>
+<a id="finding-match-history" class="anchor" href="#finding-match-history" aria-hidden="true"><span class="octicon octicon-link"></span></a>Finding match history</h3>
+
+<p>Find a list of your last 10 most recent match histories and the corresponding duration. This is used mainly for development purposes - ID's are unique and can be used to find more detailed match details.</p>
+
+<h3>
+<a id="scraping-names" class="anchor" href="#scraping-names" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scraping names</h3>
+
+<p>Scrape some names that start from the specified user ID. The scraper will increment by 1 from this start point.</p>
+
+<h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>In 2015 Brian So (<a href="https://github.com/bcso" class="user-mention">@bcso</a>) decided to create his first GH page for this project. This is a proof of concept project playing around with Riot's League of legends API to test endpoints.</p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/bcso">bcso</a> can be found on <a href="https://github.com/bcso/LeagueFetch">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
