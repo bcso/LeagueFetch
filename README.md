@@ -14,7 +14,7 @@ $ python main.py
 ```
 
 ### Finding match history
-Find a list of your last 10 most recent match histories and the corresponding duration. This is used mainly for development purposes - ID's are unique and can be used to find more detailed match details.
+Find a list of your last 10 most recent match histories and the corresponding duration. This is used mainly for development purposes - ID's are unique and can be used to find more match details.
 
 ```
 $ python main.py 
