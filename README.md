@@ -2,11 +2,9 @@ LeagueFetch
 ===========
 
 ### Welcome to League Fetch.
-This is a novel python script leveraging the [League of Legends API](https://developer.riotgames.com/), testing out what is possible with it. Users may choose between one of two options - first is to retrieve histories for their past 10 games and associated Match History ID, second is to scrape summoner in-game-names. Match History ID can be easily used to query match history details by concatenating it in the request URL.
+It is the beginnings of a thin wrapper between the [League of Legends API](https://developer.riotgames.com/) and the API calls that the user may use with their user key.
 
-It is the beginnings of a thin wrapper between the League of Legends API and the API calls that the user may use with their user key.
-
-In cluded is a python script leveraging the use of this wrapper, going through some test cases. Users may choose between one of two options - first is to retrieve histories for their past 10 games and associated Match History ID, second is to scrape summoner in-game-names. Match History ID can be easily used to query match history details by concatenating it in the request URL.
+Included is a python script leveraging the use of this wrapper, going through some test cases. Users may choose between one of two options - first is to retrieve histories for their past 10 games and associated Match History ID, second is to scrape summoner in-game-names. Match History ID can be easily used to query match history details by concatenating it in the request URL.
 
 
 ```
