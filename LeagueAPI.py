@@ -3,8 +3,8 @@ import json
 import time
 
 class LeagueObject:
-	def __init__(self):
-		self.key = "a87458ef-570a-4509-98d8-f7f0c30b183b"
+	def __init__(self, summonerKey):
+		self.key = summonerKey
 		
 	def callMatchDict(self, summId):
 		url = 'https://na.api.pvp.net/api/lol/na/v2.2/matchhistory/' + str(summId) + '?api_key=' + self.key

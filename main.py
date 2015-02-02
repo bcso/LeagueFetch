@@ -4,7 +4,7 @@ from LeagueAPI import *
 
 def main():
 	choice = 0;
-	myLeagueObject = LeagueObject()
+	myLeagueObject = LeagueObject("a87458ef-570a-4509-98d8-f7f0c30b183b")
 
 	while choice != 3:
 		print "1. Find your match history"
